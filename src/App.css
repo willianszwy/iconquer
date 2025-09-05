@@ -103,9 +103,11 @@ body {
 }
 
 .fab {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
+  position: fixed !important;
+  bottom: 30px !important;
+  right: 30px !important;
+  left: auto !important;
+  top: auto !important;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -121,7 +123,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .fab::before {
@@ -166,10 +167,11 @@ body {
   }
   
   .fab {
-    width: 55px;
-    height: 55px;
-    bottom: 20px;
-    right: 20px;
+    width: 55px !important;
+    height: 55px !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    left: auto !important;
     font-size: 1.8rem;
   }
 }
