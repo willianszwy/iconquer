@@ -1,0 +1,175 @@
+:root {
+  /* Middle-earth inspired color palette */
+  --primary-color: #d4af37; /* Elven gold */
+  --secondary-color: #2c3e2e; /* Forest deep green */
+  --background-color: #1a2f1a; /* Shire dark green */
+  --card-background: #3a4d3a; /* Woodland green */
+  --text-color: #f5f5dc; /* Beige parchment */
+  --text-muted: #a8b5a8; /* Muted forest green */
+  --success-color: #228b22; /* Forest green */
+  --danger-color: #8b2635; /* Dragon fire red */
+  --warning-color: #daa520; /* Mithril gold */
+  --border-color: #556b2f; /* Olive green */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --border-radius: 12px;
+  --elven-glow: 0 0 15px rgba(212, 175, 55, 0.3);
+  --mithril-shimmer: linear-gradient(45deg, #d4af37, #f0e68c, #d4af37);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(46, 125, 50, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, var(--background-color) 0%, var(--secondary-color) 100%);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+}
+
+.title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: var(--mithril-shimmer);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 5px;
+  text-shadow: var(--elven-glow);
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.title::before {
+  content: "⚜️";
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  filter: drop-shadow(0 0 8px var(--primary-color));
+}
+
+.title::after {
+  content: "⚜️";
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  filter: drop-shadow(0 0 8px var(--primary-color));
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 100px;
+}
+
+.fab {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--mithril-shimmer);
+  color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--elven-glow), 0 4px 20px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fab::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-color), var(--warning-color), var(--primary-color));
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.fab:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: var(--elven-glow), 0 6px 30px rgba(212, 175, 55, 0.7);
+}
+
+.fab:hover::before {
+  opacity: 1;
+  animation: ring-rotation 2s linear infinite;
+}
+
+@keyframes ring-rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.fab:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .fab {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+  }
+}

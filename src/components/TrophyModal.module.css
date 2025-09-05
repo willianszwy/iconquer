@@ -1,0 +1,158 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalContent {
+  background: linear-gradient(135deg, var(--card-background) 0%, var(--secondary-color) 100%);
+  text-align: center;
+  padding: 40px 30px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+  animation: trophyAppear 0.6s ease;
+  max-width: 90%;
+  width: 400px;
+}
+
+@keyframes trophyAppear {
+  0% {
+    transform: scale(0.3) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.trophyAnimation {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.trophyIconLarge {
+  font-size: 6rem;
+  animation: trophySpin 2s ease-in-out infinite;
+}
+
+@keyframes trophySpin {
+  0%, 100% { 
+    transform: rotate(0deg) scale(1); 
+  }
+  50% { 
+    transform: rotate(5deg) scale(1.1); 
+  }
+}
+
+.sparkles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    opacity: 0; 
+    transform: translateX(-50%) scale(0.5); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: translateX(-50%) scale(1.2); 
+  }
+}
+
+.trophyTitle {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.trophyNameLarge {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.trophyQuoteLarge {
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.motivationalMessage {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.btnPrimary {
+  padding: 12px 25px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.btnPrimary:hover {
+  background: #ffed4a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 30px 20px;
+    width: 95%;
+  }
+  
+  .trophyIconLarge {
+    font-size: 4rem;
+  }
+  
+  .trophyTitle {
+    font-size: 1.5rem;
+  }
+  
+  .trophyNameLarge {
+    font-size: 1.2rem;
+  }
+  
+  .trophyQuoteLarge {
+    font-size: 0.9rem;
+  }
+}
