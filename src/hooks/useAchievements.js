@@ -57,12 +57,18 @@ export const useAchievements = () => {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
   };
 
+  const getLocalDateString = (date = new Date()) => {
+    // Fix timezone issue by adjusting for local timezone
+    const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
+    return localDate.toISOString().split('T')[0];
+  };
+
   const addAchievement = useCallback((achievement) => {
     const newAchievement = {
       ...achievement,
       id: generateId(),
       createdAt: new Date().toISOString(),
-      achievementDate: achievement.achievementDate || new Date().toISOString().split('T')[0]
+      achievementDate: achievement.achievementDate || getLocalDateString()
     };
     const newAchievements = [...achievements, newAchievement];
     saveToStorage(newAchievements);
