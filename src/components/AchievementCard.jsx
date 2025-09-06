@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './AchievementCard.module.css';
+import TrophyIcon from './TrophyIcon';
 
 const AchievementCard = ({ 
   title, 
@@ -18,7 +19,7 @@ const AchievementCard = ({
       </div>
       
       <div className={styles.trophySection}>
-        <div className={styles.trophyIcon}>{trophy.icon}</div>
+        <TrophyIcon icon={trophy.icon} className={styles.trophyIcon} />
         <div className={styles.trophyName}>{trophy.name}</div>
         <div className={styles.trophyQuote}>{trophy.quote}</div>
       </div>

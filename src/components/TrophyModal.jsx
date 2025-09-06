@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import styles from './TrophyModal.module.css';
+import TrophyIcon from './TrophyIcon';
 
 const TrophyModal = ({ 
   isOpen, 
@@ -23,7 +24,7 @@ const TrophyModal = ({
     <div className={styles.modal} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <div className={styles.trophyAnimation}>
-          <div className={styles.trophyIconLarge}>{trophy.icon}</div>
+          <TrophyIcon icon={trophy.icon} className={styles.trophyIconLarge} />
           <div className={styles.sparkles}>✨</div>
         </div>
         <h3 className={styles.trophyTitle}>🏆 Nova Honra Conquistada! 🏆</h3>

@@ -111,7 +111,7 @@ function App() {
     <div className="app">
       <header className="header">
         <h1 className="title">🏆 iConquer</h1>
-        <p className="subtitle">Crônicas das Suas Grandes Aventuras</p>
+        <p className="subtitle">I'd forgotten not all victories were about saving the universe.</p>
       </header>
 
       <main className="main-content">
