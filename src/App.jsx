@@ -89,13 +89,7 @@ function App() {
       checkForNewTrophies(oldTrophies, newTrophies);
     }, 100);
 
-    // Schedule notification if deadline exists
-    if (formData.deadline && 'Notification' in window) {
-      scheduleNotification({
-        ...formData,
-        name: formData.name
-      });
-    }
+    // Deadline functionality removed - no notifications needed
   }, [editingAchievement, updateAchievement, addAchievement, handleCloseModal, showToast, getCurrentTrophies, checkForNewTrophies]);
 
   const handleDeleteAchievement = useCallback((id) => {
@@ -104,28 +98,6 @@ function App() {
     showToast('Conquista excluída!');
   }, [deleteAchievement, handleCloseModal, showToast]);
 
-  const scheduleNotification = useCallback((achievement) => {
-    if (!achievement.deadline || !('Notification' in window)) return;
-    
-    if (Notification.permission === 'default') {
-      Notification.requestPermission();
-    }
-    
-    const deadline = new Date(achievement.deadline);
-    const now = new Date();
-    const timeUntilDeadline = deadline.getTime() - now.getTime();
-    
-    if (timeUntilDeadline > 0 && timeUntilDeadline <= 24 * 60 * 60 * 1000) {
-      setTimeout(() => {
-        if (Notification.permission === 'granted') {
-          new Notification('iConquer - Lembrete', {
-            body: `Deadline se aproximando: ${achievement.name}`,
-            icon: '/pwa-192x192.png'
-          });
-        }
-      }, Math.max(0, timeUntilDeadline - 60 * 60 * 1000)); // 1 hour before
-    }
-  }, []);
 
   const dayAchievements = getAchievementsByDay(currentDay);
   const monthAchievements = getAchievementsByMonth(currentMonth);

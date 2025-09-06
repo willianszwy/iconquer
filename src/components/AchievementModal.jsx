@@ -11,7 +11,6 @@ const AchievementModal = ({
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    deadline: '',
     achievementDate: ''
   });
   const [charCount, setCharCount] = useState(0);
@@ -21,7 +20,6 @@ const AchievementModal = ({
       setFormData({
         name: achievement.name || '',
         description: achievement.description || '',
-        deadline: achievement.deadline || '',
         achievementDate: achievement.achievementDate || ''
       });
       setCharCount(achievement.description?.length || 0);
@@ -29,7 +27,6 @@ const AchievementModal = ({
       setFormData({
         name: '',
         description: '',
-        deadline: '',
         achievementDate: ''
       });
       setCharCount(0);
@@ -99,16 +96,6 @@ const AchievementModal = ({
               rows="3"
             />
             <small className={styles.charCounter}>{charCount}/100</small>
-          </div>
-          
-          <div className={styles.formGroup}>
-            <label htmlFor="deadline">⏰ Prazo Final</label>
-            <input
-              type="date"
-              id="deadline"
-              value={formData.deadline}
-              onChange={handleChange('deadline')}
-            />
           </div>
           
           <div className={styles.formGroup}>
