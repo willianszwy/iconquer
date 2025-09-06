@@ -38,9 +38,9 @@
 }
 
 .cardTitle {
-  font-family: 'Germania One', serif;
+  font-family: 'Faustina', serif;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 700;
   color: var(--primary-color);
   margin: 0;
   letter-spacing: 1px;
@@ -122,9 +122,9 @@
 }
 
 .trophyName {
-  font-family: 'Germania One', serif;
+  font-family: 'Faustina', serif;
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: 600;
   color: var(--primary-color);
   margin-bottom: 10px;
   text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
@@ -132,8 +132,9 @@
 }
 
 .trophyQuote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Faustina', serif;
   font-style: italic;
+  font-weight: 400;
   color: var(--text-muted);
   font-size: 0.95rem;
   max-width: 90%;
@@ -197,8 +198,8 @@
 }
 
 .achievementName {
-  font-family: 'Germania One', serif;
-  font-weight: 400;
+  font-family: 'Faustina', serif;
+  font-weight: 600;
   color: var(--text-color);
   margin-bottom: 5px;
   margin-left: 20px;
@@ -206,14 +207,17 @@
 }
 
 .achievementDescription {
+  font-family: 'Faustina', serif;
   color: var(--text-muted);
   font-size: 0.9rem;
+  font-weight: 400;
   margin-bottom: 5px;
   margin-left: 20px;
   font-style: italic;
 }
 
 .achievementDate {
+  font-family: 'Faustina', serif;
   color: var(--primary-color);
   font-size: 0.8rem;
   font-weight: 500;
@@ -222,9 +226,11 @@
 }
 
 .noAchievements {
+  font-family: 'Faustina', serif;
   text-align: center;
   color: var(--text-muted);
   font-style: italic;
+  font-weight: 400;
   padding: 20px;
   margin: 0;
   position: relative;

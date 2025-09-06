@@ -84,25 +84,27 @@
 }
 
 .trophyTitle {
-  font-family: 'Germania One', serif;
+  font-family: 'Faustina', serif;
   color: var(--primary-color);
   font-size: 1.8rem;
   margin-bottom: 15px;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
 .trophyNameLarge {
-  font-family: 'Germania One', serif;
+  font-family: 'Faustina', serif;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 15px;
   color: var(--text-color);
   letter-spacing: 1px;
 }
 
 .trophyQuoteLarge {
+  font-family: 'Faustina', serif;
   font-style: italic;
+  font-weight: 400;
   color: var(--text-muted);
   margin-bottom: 20px;
   line-height: 1.6;
@@ -110,6 +112,7 @@
 }
 
 .motivationalMessage {
+  font-family: 'Faustina', serif;
   background: rgba(255, 215, 0, 0.1);
   border: 1px solid rgba(255, 215, 0, 0.3);
   border-radius: 8px;
@@ -121,6 +124,7 @@
 }
 
 .btnPrimary {
+  font-family: 'Faustina', serif;
   padding: 12px 25px;
   background: var(--primary-color);
   color: var(--secondary-color);
