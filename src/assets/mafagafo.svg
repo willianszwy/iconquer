@@ -1,0 +1,21 @@
+<svg width="1em" height="1em" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#A67C52"/>
+  <!-- Eyes -->
+  <circle cx="120" cy="120" r="25" fill="#000000"/>
+  <circle cx="280" cy="120" r="25" fill="#000000"/>
+  <!-- Mouth -->
+  <rect x="80" y="200" width="240" height="60" rx="15" ry="15" fill="#000000"/>
+  <rect x="90" y="210" width="220" height="40" rx="10" ry="10" fill="#DC143C"/>
+  <!-- Teeth -->
+  <polygon points="110,210 130,210 120,240" fill="#FFFFFF"/>
+  <polygon points="150,210 170,210 160,240" fill="#FFFFFF"/>
+  <polygon points="190,210 210,210 200,240" fill="#FFFFFF"/>
+  <polygon points="230,210 250,210 240,240" fill="#FFFFFF"/>
+  <polygon points="270,210 290,210 280,240" fill="#FFFFFF"/>
+  <!-- Bottom teeth -->
+  <polygon points="130,250 110,250 120,220" fill="#FFFFFF"/>
+  <polygon points="170,250 150,250 160,220" fill="#FFFFFF"/>
+  <polygon points="210,250 190,250 200,220" fill="#FFFFFF"/>
+  <polygon points="250,250 230,250 240,220" fill="#FFFFFF"/>
+  <polygon points="290,250 270,250 280,220" fill="#FFFFFF"/>
+</svg>

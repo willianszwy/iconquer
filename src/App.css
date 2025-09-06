@@ -1,21 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Kite+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Epunda+Slab:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Square+Peg&display=swap');
 
 :root {
-  /* Middle-earth inspired color palette */
-  --primary-color: #d4af37; /* Elven gold */
-  --secondary-color: #2c3e2e; /* Forest deep green */
-  --background-color: #1a2f1a; /* Shire dark green */
-  --card-background: #3a4d3a; /* Woodland green */
-  --text-color: #f5f5dc; /* Beige parchment */
-  --text-muted: #a8b5a8; /* Muted forest green */
-  --success-color: #228b22; /* Forest green */
-  --danger-color: #8b2635; /* Dragon fire red */
-  --warning-color: #daa520; /* Mithril gold */
-  --border-color: #556b2f; /* Olive green */
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  /* Airbnb inspired color palette */
+  --primary-color: #FF385C; /* Airbnb Rausch Red */
+  --primary-light: #FF5A75;
+  --primary-dark: #D50027;
+  --secondary-color: #222222; /* Dark Gray */
+  --background-color: #FFFFFF; /* Clean White */
+  --background-light: #F7F7F7; /* Light Gray */
+  --card-background: #FFFFFF; /* Pure White */
+  --card-border: #DDDDDD; /* Light Border */
+  --text-color: #222222; /* Dark Text */
+  --text-muted: #717171; /* Muted Gray */
+  --text-light: #B0B0B0; /* Light Gray Text */
+  --success-color: #00A699; /* Teal */
+  --danger-color: #FF385C; /* Same as primary */
+  --warning-color: #FFB400; /* Amber */
+  --hover-background: #F7F7F7;
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.16);
   --border-radius: 12px;
-  --elven-glow: 0 0 15px rgba(212, 175, 55, 0.3);
-  --mithril-shimmer: linear-gradient(45deg, #d4af37, #f0e68c, #d4af37);
+  --border-radius-large: 16px;
+  --transition: all 0.2s ease;
 }
 
 * {
@@ -25,15 +32,13 @@
 }
 
 body {
-  font-family: 'Faustina', serif;
-  background: 
-    radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(46, 125, 50, 0.1) 0%, transparent 50%),
-    linear-gradient(135deg, var(--background-color) 0%, var(--secondary-color) 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--background-light);
   color: var(--text-color);
-  line-height: 1.6;
+  line-height: 1.5;
   min-height: 100vh;
-  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
@@ -52,51 +57,38 @@ body {
 
 .header {
   text-align: center;
-  margin-bottom: 30px;
-  padding: 20px 0;
+  margin-bottom: 32px;
+  padding: 32px 0;
+  background: var(--background-color);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-light);
+  margin-top: 24px;
 }
 
 .title {
-  font-family: 'Faustina', serif;
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: var(--mithril-shimmer);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 5px;
-  text-shadow: var(--elven-glow);
-  letter-spacing: 2px;
-  position: relative;
+  font-family: 'Epunda Slab', serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ad1457;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
-.title::before {
-  content: "⚜️";
-  position: absolute;
-  left: -2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--primary-color);
-  filter: drop-shadow(0 0 8px var(--primary-color));
-}
-
-.title::after {
-  content: "⚜️";
-  position: absolute;
-  right: -2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--primary-color);
-  filter: drop-shadow(0 0 8px var(--primary-color));
+.title-icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  margin-right: 8px;
 }
 
 .subtitle {
-  font-family: 'Kite One', sans-serif;
+  font-family: 'Square Peg', cursive;
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1.75rem;
   font-weight: 400;
-  font-style: normal;
-  letter-spacing: 1px;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.4;
 }
 
 .main-content {
@@ -106,74 +98,61 @@ body {
 
 .fab {
   position: fixed !important;
-  bottom: 30px !important;
-  right: 30px !important;
+  bottom: 32px !important;
+  right: 32px !important;
   left: auto !important;
   top: auto !important;
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: var(--mithril-shimmer);
-  color: var(--secondary-color);
-  border: 2px solid var(--primary-color);
-  font-size: 2rem;
-  font-weight: bold;
+  background: #f25278;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
   cursor: pointer;
-  box-shadow: var(--elven-glow), 0 4px 20px rgba(212, 175, 55, 0.4);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.fab::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 50%;
-  background: conic-gradient(var(--primary-color), var(--warning-color), var(--primary-color));
-  z-index: -1;
-  opacity: 0.7;
-}
-
 .fab:hover {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: var(--elven-glow), 0 6px 30px rgba(212, 175, 55, 0.7);
-}
-
-.fab:hover::before {
-  opacity: 1;
-  animation: ring-rotation 2s linear infinite;
-}
-
-@keyframes ring-rotation {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-heavy);
 }
 
 .fab:active {
-  transform: scale(0.95);
+  transform: translateY(0);
+  transition: transform 0.1s ease;
 }
 
 @media (max-width: 768px) {
   #root {
-    padding: 15px;
+    padding: 16px;
+  }
+  
+  .header {
+    padding: 24px 16px;
+    margin-top: 16px;
   }
   
   .title {
-    font-size: 2rem;
+    font-size: 1.875rem;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
   }
   
   .fab {
-    width: 55px !important;
-    height: 55px !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    left: auto !important;
-    font-size: 1.8rem;
+    width: 52px !important;
+    height: 52px !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    font-size: 1.25rem;
   }
 }
